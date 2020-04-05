@@ -1,80 +1,22 @@
 {
   "controls": [
     {
-      "name": "home",
-      "options": {
-        "zoomOnStart": true
-      }
-    },
-    {
-      "name": "mapmenu",
-      "options": {
-        "isActive": false
-      }
-    },
-    {
-      "name": "sharemap"
-    },
-    {
       "name": "geoposition"
     },
     {
-      "name": "print"
-    },
-    {
-      "name": "about",
+      "name": "draganddrop",
       "options": {
-        "buttonText": "Om Origo",
-        "title": "Om Origo",
-        "content": "<p>Origo är ett ramverk för webbkartor. Ramverket bygger på JavaScript-biblioteket OpenLayers. Du kan använda Origo för att skapa egna webbaserade kartapplikationer.</p><br><p>Projektet drivs och underhålls av ett antal svenska kommuner. Besök gärna <a href='https://github.com/origo-map/origo' target='_blank'>Origo på GitHub</a> för mer information.</p>"
+        "groupName": "drag-and-drop-layers",
+        "groupTitle": "Drag-and-drop layers"
       }
-    },
-    {
-      "name": "link",
-      "options": {
-        "title": "Origo",
-        "url": "https://github.com/origo-map/origo"
-      }
-    },
-    {
-      "name": "legend"
-    },
-    {
-      "name": "position",
-      "options": {
-        "title": "Web Mercator",
-        "projections": {
-          "EPSG:4326": "WGS84",
-          "EPSG:3006": "Sweref99 TM"
-        }
-      }
-    },
-    {
-      "name": "measure"
     }
   ],
-  "pageSettings": {
-  "footer": {
-    "img": "img/png/logo.png",
-    "url" : "https://github.com/origo-map/origo",
-    "urlText": "Origo"
-  },
-  "mapGrid": {
-    "visible": true
-  }
-},
   "projectionCode": "EPSG:3857",
   "projectionExtent": [
     -20026376.39,
     -20048966.10,
     20026376.39,
     20048966.10
-  ],
-  "proj4Defs": [
-      {
-        "code": "EPSG:3006",
-        "projection": "+proj=utm +zone=33 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
-      }
   ],
   "extent": [
     -20026376.39,
@@ -83,10 +25,10 @@
     20048966.10
   ],
   "center": [
-    1770000,
-    8770000
+    2023161.495580,
+    8220766.398416
   ],
-  "zoom": 7,
+  "zoom": 18,
   "resolutions": [
     156543.03,
     78271.52,
@@ -108,11 +50,6 @@
     1.1943,
     0.5972
   ],
-  "source": {
-    "local": {
-      "url": "http://localhost/geoserver/wms"
-    }
-  },
   "groups": [
     {
       "name": "background",
@@ -121,31 +58,6 @@
     }
   ],
   "layers": [
-    {
-      "name": "origo-cities",
-      "title": "Origokommuner",
-      "group": "root",
-      "source": "data/origo-cities-3857.geojson",
-      "style": "origo-logo",
-      "type": "GEOJSON",
-      "attributes": [
-          {
-            "name": "name"
-          }
-      ],
-      "visible": true
-    },
-    {
-      "name": "origo-mask",
-      "opacity": 0.25,
-      "title": "origo-mask",
-      "group": "none",
-      "queryable": false,
-      "source": "data/origo-mask-3857.geojson",
-      "style": "mask",
-      "type": "GEOJSON",
-      "visible": true
-    },
     {
       "name": "osm",
       "title": "OpenStreetMap",
@@ -157,98 +69,26 @@
     }
   ],
   "styles": {
-      "mask": [
-        [
-          {
-            "stroke": {
-              "color": "rgba(0,0,0,1.0)"
-            },
-            "fill": {
-              "color": "rgba(0,0,0,1.0)"
-            }
-          }
-        ]
-      ],
-      "origo-logo": [
-        [
-          {
-            "label": "Origokommuner",
-            "circle": {
-              "radius": 10,
-              "stroke": {
-                "color": "rgba(0,0,0,1)",
-                "width": 2.5
-              },
-              "fill": {
-                "color": "rgba(255,255,255,0.9)"
-              }
-            }
+    "mask": [
+      [
+        {
+          "stroke": {
+            "color": "rgba(0,0,0,1.0)"
           },
-          {
-            "circle": {
-              "radius": 2.5,
-              "stroke": {
-                "color": "rgba(0,0,0,0)",
-                "width": 1
-              },
-              "fill": {
-                "color": "rgba(37,129,196,1)"
-              }
-            }
+          "fill": {
+            "color": "rgba(0,0,0,1.0)"
           }
-        ]
-      ],
-      "cirkel": [
-        [
-          {
-            "circle": {
-              "radius": 6,
-              "stroke": {
-                "color": "rgba(0,0,0,1)",
-                "width": 2
-              },
-              "fill": {
-                "color": "rgba(0,0,0,0.5)"
-              }
-            }
-          }
-        ]
-      ],
-      "karta_osm": [
-        [
-          {
-            "image": {
-              "src": "img/png/osm.png"
-            }
-          }
-        ]
-      ],      
-      "karta_gra": [
-        [
-          {
-            "image": {
-              "src": "img/png/gra.png"
-            }
-          }
-        ]
-      ],
-      "karta_farg": [
-        [
-          {
-            "image": {
-              "src": "img/png/farg.png"
-            }
-          }
-        ]
-      ],
-      "orto": [
-        [
-          {
-            "image": {
-              "src": "img/png/orto.png"
-            }
-          }
-        ]
+        }
       ]
+    ],
+    "karta_osm": [
+      [
+        {
+          "image": {
+            "src": "img/png/osm.png"
+          }
+        }
+      ]
+    ]
   }
 }

@@ -6,10 +6,47 @@ import KMLFormat from 'ol/format/KML';
 import TopoJSONFormat from 'ol/format/TopoJSON';
 import VectorSource from 'ol/source/Vector';
 import VectorLayer from 'ol/layer/Vector';
+import Point from 'ol/geom/Point';
+import Stroke from 'ol/style/Stroke';
+import Icon from 'ol/style/Icon';
+import Style from 'ol/style/Style';
 import { Component } from '../ui';
 
 const DragAndDrop = function DragAndDrop(options = {}) {
   let viewer;
+
+
+  var styleFunction = function (feature) {
+    var geometry = feature.getGeometry();
+    var styles = [
+      new Style({
+        stroke: new Stroke({
+          color: "rgba(255,0,0,1.0)",
+          lineDash: [
+            6,
+            6
+          ],
+          width: 4
+        })
+      })
+    ];
+
+    var coords = geometry.getCoordinates();
+    let coor;
+    coords.forEach(function (i, idx, array) {
+      if (idx === array.length - 1) {
+        coor = i;
+      }
+    });
+    styles.push(new Style({
+      geometry: new Point(coor),
+      image: new Icon({
+        src: 'img/png/x.png',
+        rotateWithView: true
+      })
+    }));
+    return styles;
+  };
 
   return Component({
     name: 'draganddrop',
@@ -46,9 +83,9 @@ const DragAndDrop = function DragAndDrop(options = {}) {
           group: groupName,
           title: event.file.name.split('.')[0],
           queryable: true,
-          removable: true
+          removable: true,
+          style: styleFunction
         });
-
         map.addLayer(vectorLayer);
         map.getView().fit(vectorSource.getExtent());
       });

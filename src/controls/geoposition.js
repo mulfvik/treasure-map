@@ -86,7 +86,8 @@ const Geoposition = function Geoposition(options = {}) {
     onAdd(evt) {
       viewer = evt.target;
       if (!target) target = `${viewer.getMain().getNavigation().getId()}`;
-      if (!zoomLevel) zoomLevel = viewer.getResolutions().length - 3 || 0;
+      if (!zoomLevel) zoomLevel = 19;
+      console.log(viewer.getResolutions().length)
       baseUrl = viewer.getBaseUrl();
       this.on('render', this.onRender);
       this.addComponents([positionButton]);

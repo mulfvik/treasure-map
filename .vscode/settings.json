@@ -1,0 +1,8 @@
+{
+  "appService.zipIgnorePattern": [
+    "node_modules{,/**}",
+    ".vscode{,/**}"
+  ],
+  "appService.deploySubpath": "",
+  "appService.defaultWebAppToDeploy": "/subscriptions/6e2e386f-6448-4269-b928-3916b18f2234/resourceGroups/treasure-mapper/providers/Microsoft.Web/sites/treasure-mapper"
+}

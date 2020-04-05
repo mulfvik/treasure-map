@@ -32,11 +32,11 @@ const Origo = function Origo(configPath, options = {}) {
     },
     breakPointsPrefix: 'o-media',
     defaultControls: [
-      { name: 'scaleline' },
-      { name: 'zoom' },
-      { name: 'rotate' },
-      { name: 'attribution' },
-      { name: 'fullscreen' }
+      // { name: 'scaleline' },
+      // { name: 'zoom' },
+      // { name: 'rotate' },
+      { name: 'attribution' }
+      // { name: 'fullscreen' }
     ]
   };
 

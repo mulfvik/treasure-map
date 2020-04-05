@@ -739,6 +739,17 @@
     .o-ui .slidenav.slide-secondary .secondary {
       opacity: 1;
       transform: none; }
+  .o-ui .o-scrollbar::-webkit-scrollbar {
+    width: 11px; }
+  .o-ui .o-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #dcdcdc white; }
+  .o-ui .o-scrollbar::-webkit-scrollbar-track {
+    background: white; }
+  .o-ui .o-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #dcdcdc;
+    border-radius: 6px;
+    border: 3px solid white; }
   .o-ui .fade-in {
     animation: 0.3s fade-in ease; }
   .o-ui .fade-out {
@@ -1147,12 +1158,6 @@
     font-weight: 600; }
   .o-ui .text-weight-bold {
     font-weight: 700; }
-  .o-ui .text-overflow-clip {
-    text-overflow: clip; }
-  .o-ui .text-overflow-ellipsis {
-    text-overflow: ellipsis; }
-  .o-ui .text-nowrap {
-    white-space: nowrap; }
   .o-ui .text-fade:after {
     background: linear-gradient(to right, rgba(255, 255, 255, 0), white 50%);
     bottom: 0;
@@ -1253,6 +1258,9 @@
   .o-ui .rounded-large {
     border-radius: 1rem;
     overflow: hidden; }
+  .o-ui .rounded-larger {
+    border-radius: 2rem;
+    overflow: hidden; }
   .o-ui .rounded-top {
     border-radius: 0.25rem 0.25rem 0 0;
     overflow: hidden; }
@@ -1333,9 +1341,7 @@ body {
   flex-direction: column;
   height: 100%;
   overflow: hidden;
-  -ms-touch-action: manipulation;
   position: relative;
-  touch-action: manipulation;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   /* invisible but not hidden */
   /*workaround to remove ol logo until class for the logo*/
@@ -1555,6 +1561,10 @@ body {
     color: #bbb; }
   .o-map .ol-overlaycontainer-stopevent {
     z-index: unset !important; }
+  .o-map .ol-overlaycontainer, .o-map .ol-overlaycontainer-stopevent {
+    pointer-events: none; }
+  .o-map .ol-overlaycontainer > *, .o-map .ol-overlaycontainer-stopevent > * {
+    pointer-events: auto; }
   .o-map .owl-carousel {
     display: none;
     width: 100%;
@@ -2492,9 +2502,9 @@ body {
     border-radius: 4px;
     box-sizing: border-box;
     height: 1.5rem;
-    margin: 0;
+    margin: 0 0 0 1em;
     overflow: hidden;
-    padding: .5rem 0 .5rem .75rem;
+    padding: .5rem 0 .5rem 0;
     width: 100%; }
   .o-map input.o-search-field:focus {
     outline: none; }
@@ -2528,6 +2538,31 @@ body {
     border-radius: 10px; }
   .o-map .o-scalepicker .dropdown li:hover {
     color: #363636; }
+  .o-map .o-embedded-overlay {
+    background-color: rgba(37, 129, 196, 0.5);
+    z-index: 2;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 0px;
+    border-width: 0px;
+    margin: 0px;
+    left: 0px;
+    top: 0px;
+    opacity: 0;
+    transition: opacity ease-in-out;
+    transition-duration: 0.8s;
+    transition-delay: 0.1s;
+    pointer-events: none;
+    text-align: center; }
+  .o-map .o-embedded-overlay p {
+    font-size: 20px;
+    color: white;
+    font-family: Roboto,Arial,sans-serif;
+    position: relative;
+    margin: 0 50px;
+    top: 50%;
+    transform: translateY(-50%); }
 
 html,
 body {
