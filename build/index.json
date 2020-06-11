@@ -13,43 +13,59 @@
   ],
   "projectionCode": "EPSG:3857",
   "projectionExtent": [
-    -20026376.39,
-    -20048966.10,
-    20026376.39,
-    20048966.10
+    -1678505.1838360203,
+    4665380,
+    2431912.7361639794,
+    8775797.92
+  ],
+  "proj4Defs": [
+    {
+      "code": "EPSG:3010",
+      "alias": "urn:ogc:def:crs:EPSG::3010",
+      "projection": "+proj=tmerc +lat_0=0 +lon_0=16.5 +k=1 +x_0=150000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
+    },
+    {
+      "code": "EPSG:3006",
+      "projection": "+proj=utm +zone=33 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
+    }
   ],
   "extent": [
-    -20026376.39,
-    -20048966.10,
-    20026376.39,
-    20048966.10
+    -1678505.1838360203,
+    4665380,
+    2431912.7361639794,
+    8775797.92
   ],
   "center": [
-    2023161.495580,
-    8220766.398416
+    1894712, 8276887
   ],
-  "zoom": 18,
+  "home": [
+    160535,
+    6603098,
+    203703,
+    6561417
+  ],
+  "zoom": 2,
   "resolutions": [
-    156543.03,
-    78271.52,
-    39135.76,
-    19567.88,
-    9783.94,
-    4891.97,
-    2445.98,
-    1222.99,
-    611.50,
-    305.75,
-    152.87,
-    76.437,
-    38.219,
-    19.109,
-    9.5546,
-    4.7773,
-    2.3887,
-    1.1943,
-    0.5972
+    1146.8799999999999,
+    573.4399999999999,
+    286.71999999999997,
+    143.35999999999999,
+    71.67999999999999,
+    35.839999999999996,
+    17.919999999999998,
+    8.959999999999999,
+    4.4799999999999995,
+    2.2399999999999998,
+    1.1199999999999999,
+    0.5599999999999999,
+    0.27999999999999997,
+    0.13999999999999999
   ],
+  "featureinfoOptions": {
+    "overlay": true,
+    "clusterFeatureinfoLevel": 3,
+    "pinning": false
+  },
   "groups": [
     {
       "name": "background",
@@ -57,7 +73,29 @@
       "expanded": true
     }
   ],
+  "source": {
+    "local": {
+      "url": "https://kartor.strangnas.se/geoserver/ows"
+    },
+    "basemap": {
+      "url": "https://kartor.strangnas.se/geowebcache/service/wmts"
+    }
+  },
   "layers": [
+    {
+      "name": "map",
+      "title": "Följ till skatt!",
+      "group": "root",
+      "source": "data/map.geojson",
+      "style": "skatt",
+      "type": "GEOJSON",
+      "attributes": [
+        {
+          "name": "name"
+        }
+      ],
+      "visible": true
+    },
     {
       "name": "osm",
       "title": "OpenStreetMap",
@@ -66,9 +104,51 @@
       "style": "karta_osm",
       "type": "OSM",
       "visible": true
+    },
+    {
+      "attribution": "&copy Lantmäteriet Geodatasamverkan | Strängnäs kommun",
+      "abstract": "<p>Information om när detta fotot är taget finner du <a href='https://geolex.etjanster.lantmateriet.se/?e=614815&n=6580926&z=7&profile=default_geolex_orto_latest_year_noauth' target='_blank'>här</a> på Lantmäteriets tjänst GeoLex.</p>",
+      "format": "image/jpeg",
+      "group": "background",
+      "name": "orto025",
+      "source": "basemap",
+      "title": "Flygfoto",
+      "type": "WMTS",
+      "style": "orto",
+      "visible": false
     }
   ],
   "styles": {
+    "skatt": [
+      [
+        {
+          "custom": "treasure"
+        }
+      ]
+    ],
+    "skatt1": [
+      [
+        {
+          "stroke": {
+            "color": "rgba(255,0,0,1.0)",
+            "lineDash": [
+              6,
+              6
+            ],
+            "width": 4
+          }
+        }
+      ]
+    ],
+    "skattX1": [
+      [
+        {
+          "icon": {
+            "src": "img/png/x.png"
+          }
+        }
+      ]
+    ],
     "mask": [
       [
         {

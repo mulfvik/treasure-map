@@ -1,7 +1,10 @@
 import defaultStyle from './stylefunctions/default';
+import treasureStyle from './stylefunctions/treasureStyle';
+
 
 const customStyles = {
-  default: defaultStyle
+  default: defaultStyle,
+  treasure: treasureStyle
 };
 
 export default function styleFunctions(customStyle, params) {

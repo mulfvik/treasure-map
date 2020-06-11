@@ -1,8 +1,0 @@
-{
-"type": "FeatureCollection",
-"name": "skattX",
-"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3010" } },
-"features": [
-{ "type": "Feature", "properties": { "id": 1 }, "geometry": { "type": "Point", "coordinates": [ 245949.731634713389212, 6566581.007636247202754 ] } }
-]
-}

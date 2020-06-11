@@ -11,7 +11,7 @@
       }
     }
   ],
-  "projectionCode": "EPSG:3010",
+  "projectionCode": "EPSG:3857",
   "projectionExtent": [
     -1678505.1838360203,
     4665380,
@@ -36,8 +36,7 @@
     8775797.92
   ],
   "center": [
-    245828,
-    6566617
+    1894712, 8276887
   ],
   "home": [
     160535,
@@ -45,7 +44,7 @@
     203703,
     6561417
   ],
-  "zoom": 20,
+  "zoom": 2,
   "resolutions": [
     1146.8799999999999,
     573.4399999999999,
@@ -75,19 +74,13 @@
     }
   ],
   "source": {
-    "local": {
-      "url": "https://kartor.strangnas.se/geoserver/ows"
-    },
-    "basemap": {
-      "url": "https://kartor.strangnas.se/geowebcache/service/wmts"
-    }
   },
   "layers": [
     {
-      "name": "skatt",
+      "name": "map",
       "title": "Följ till skatt!",
       "group": "root",
-      "source": "data/skatt.geojson",
+      "source": "data/map.geojson",
       "style": "skatt",
       "type": "GEOJSON",
       "attributes": [
@@ -98,29 +91,12 @@
       "visible": true
     },
     {
-      "name": "skattX",
-      "title": "Här är skatten!",
-      "group": "root",
-      "source": "data/skattX.geojson",
-      "style": "skattX",
-      "type": "GEOJSON",
-      "attributes": [
-        {
-          "name": "name"
-        }
-      ],
-      "visible": true
-    },
-    {
-      "attribution": "&copy Lantmäteriet Geodatasamverkan | Strängnäs kommun",
-      "abstract": "<p>Information om när detta fotot är taget finner du <a href='https://geolex.etjanster.lantmateriet.se/?e=614815&n=6580926&z=7&profile=default_geolex_orto_latest_year_noauth' target='_blank'>här</a> på Lantmäteriets tjänst GeoLex.</p>",
-      "format": "image/jpeg",
+      "name": "osm",
+      "title": "OpenStreetMap",
       "group": "background",
-      "name": "orto025",
-      "source": "basemap",
-      "title": "Flygfoto",
-      "type": "WMTS",
-      "style": "orto",
+      "queryable": false,
+      "style": "karta_osm",
+      "type": "OSM",
       "visible": true
     }
   ],
@@ -128,23 +104,7 @@
     "skatt": [
       [
         {
-          "stroke": {
-            "color": "rgba(255,0,0,1.0)",
-            "lineDash": [
-              6,
-              6
-            ],
-            "width": 4
-          }
-        }
-      ]
-    ],
-    "skattX": [
-      [
-        {
-          "icon": {
-            "src": "img/png/x.png"
-          }
+          "custom": "treasure"
         }
       ]
     ],
